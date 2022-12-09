@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  mysql_master:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: licious
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: root
+    container_name: "mysql_master"
+    restart: "no"
+    ports:
+      - 4406:3306
+
+  mysql_slave:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: licious
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: root
+    container_name: "mysql_slave"
+    restart: "no"
+    ports:
+      - 5506:3306
+    depends_on:
+      - mysql_master

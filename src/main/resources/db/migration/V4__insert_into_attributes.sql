@@ -1,0 +1,1 @@
+INSERT INTO attributes(title, value, is_active) VALUES ('colour', 'red', 1);

@@ -1,0 +1,1 @@
+INSERT INTO attributes_group (title, is_active) VALUES ('colour group', 1);
