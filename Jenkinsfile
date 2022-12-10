@@ -3,7 +3,7 @@ pipeline {
   agent any
 
   parameters {
-    gitParameter branchFilter: 'origin.*/(.*)', defaultValue: 'develop', name: 'branch', quickFilterEnabled: true, selectedValue: 'NONE', sortMode: 'ASCENDING_SMART', type: 'PT_BRANCH', useRepository: 'git@github.com:kesavakimmich/flywaydemo.git'
+    gitParameter branchFilter: 'origin.*/(.*)', defaultValue: 'develop', name: 'branch', type: 'PT_BRANCH'
     choice name: 'environment', choices: "dev\nstaging", description: 'deploy environment'
   }
 
