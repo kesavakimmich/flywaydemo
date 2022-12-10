@@ -29,6 +29,11 @@ pipeline {
       }
     }
 
+    stage('docker init') {
+      def dockerHome = tool 'docker'
+      env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
+
     stage('ECR push') {
       steps {
         sh "docker build -f Dockerfile -t kesavakimmich/flyway-demo:${env.tag} ."
