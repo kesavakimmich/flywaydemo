@@ -30,8 +30,10 @@ pipeline {
     }
 
     stage('docker init') {
-      def dockerHome = tool 'docker'
-      env.PATH = "${dockerHome}/bin:${env.PATH}"
+      steps {
+        def dockerHome = tool 'docker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+      }
     }
 
     stage('ECR push') {
