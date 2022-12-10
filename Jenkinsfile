@@ -25,9 +25,10 @@ pipeline {
 
     stage('Build') {
       steps {
-        withMaven {
-          sh "mvn package -DskipTests"
-        }
+        sh "./mvnw package -DskipTests"
+//         withMaven {
+//           sh "./mvnw package -DskipTests"
+//         }
       }
     }
 
