@@ -26,9 +26,13 @@ pipeline {
     stage('Build') {
       steps {
         sh "./mvnw package -DskipTests"
-//         withMaven {
-//           sh "./mvnw package -DskipTests"
-//         }
+      }
+    }
+
+    stage('ECR push') {
+      steps {
+        sh "docker build -f Dockerfile -t kesavakimmich/flyway-demo:${env.tag} ."
+        sh "docker push kesavakimmich/catalogue-service:${env.tag}"
       }
     }
 
