@@ -24,10 +24,12 @@ pipeline {
     }
 
     stage('Build') {
-          steps {
-            sh "mvn package -DskipTests"
-          }
+      steps {
+        withMaven {
+          sh "mvn package -DskipTests"
         }
+      }
+    }
 
   }
 
