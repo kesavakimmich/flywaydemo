@@ -15,7 +15,7 @@ pipeline {
 
     stage('Checkout') {
       steps {
-        checkout([$class: 'GitSCM', branches: [[name: "develop"]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'git@github.com:kesavakimmich/flywaydemo.git']]])
+        checkout([$class: 'GitSCM', branches: [[name: "develop"]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/kesavakimmich/flywaydemo.git']]])
         script {
             env.commit_id = "${sh(script:'git rev-parse --short HEAD', returnStdout: true).trim()}"
             env.tag = "${params.branch}-${env.commit_id}"
