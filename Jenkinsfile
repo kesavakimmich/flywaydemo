@@ -32,7 +32,7 @@ pipeline {
     stage('ECR push') {
       steps {
         sh "docker build -f Dockerfile -t kesavakimmich/flyway-demo:${env.tag} ."
-        sh "docker push kesavakimmich/catalogue-service:${env.tag}"
+        sh "docker push kesavakimmich/flyway-demo:${env.tag}"
       }
     }
 
