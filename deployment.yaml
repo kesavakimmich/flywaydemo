@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: flywaydemo
-          image: kesavakimmich/flyway-demo:null-a7ea48a
+          image: kesavakimmich/flyway-demo:null-dbc4f0c
           ports:
             - containerPort: 8081
 
