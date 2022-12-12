@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: flyway-deployment
+spec:
+  containers:
+    - name: flywaydemo
+      image: kesavakimmich/flyway-demo:null-fef2f31
+      resources:
+        limits:
+          memory: "200Mi"
