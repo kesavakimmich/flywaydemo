@@ -38,7 +38,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh "sed 's/{{image-address}}/'kesavakimmich/flyway-demo:${env.tag}'/g' deployment.yaml | kubectl apply -f -"
+        sh "sed 's/image-id/'${env.tag}'/g' deployment.yaml | kubectl apply -f -"
       }
     }
 
