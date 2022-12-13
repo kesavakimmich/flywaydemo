@@ -19,6 +19,7 @@ spec:
       containers:
         - name: flywaydemo
           image: kesavakimmich/flyway-demo:image-id
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
 
