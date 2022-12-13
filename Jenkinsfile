@@ -36,9 +36,11 @@ pipeline {
       }
     }
 
-//     stage('Deploy') {
-//
-//     }
+    stage('Deploy') {
+      steps {
+        sh "sed 's/{{image_id}}/'${env.tag}'/g' deployment.yml | kubectl apply -f -"
+      }
+    }
 
   }
 

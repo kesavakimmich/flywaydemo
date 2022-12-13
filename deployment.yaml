@@ -18,9 +18,9 @@ spec:
     spec:
       containers:
         - name: flywaydemo
-          image: kesavakimmich/flyway-demo:null-dbc4f0c
+          image: kesavakimmich/flyway-demo:image-id
           ports:
-            - containerPort: 8081
+            - containerPort: 8080
 
 ---
 
@@ -35,4 +35,4 @@ spec:
     app: flyway
   ports:
     - protocol: TCP
-      port: 8081
+      port: 8080
